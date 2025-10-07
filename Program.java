@@ -41,7 +41,6 @@ public class Program {
                 case "Q":
                     System.out.println("Exit program.");
                     System.exit(0);
-                    break;
                 default:
                     break;
             }
