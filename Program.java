@@ -39,6 +39,8 @@ public class Program {
                 case "E":
                     extendTime();
                 case "Q":
+                    System.out.println("Exit program.");
+                    System.exit(0);
                     break;
                 default:
                     break;
