@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Program {
     Scanner scanner = new Scanner(System.in);
     Library library;
+    public int daysBorrowed;
 
     public void run() {
         library = new Library();
@@ -39,6 +40,8 @@ public class Program {
                 case "E":
                     extendTime();
                     break;
+                case "D":
+                    advanceDay();
                 case "Q":
                     System.out.println("Exit program.");
                     System.exit(0);
@@ -49,6 +52,10 @@ public class Program {
 
             library.advanceDay();
         }
+    }
+
+    public void advanceDay() {
+        this.daysBorrowed++;
     }
 
     public void extendTime() {

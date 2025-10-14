@@ -14,14 +14,14 @@ public class BookTest {
     public void testBorrowBook() {
 
     }
-    // Testing if the book is not late
+
     @Test
     public void testCheckLateFee_NotLate() {
         Book book = new Book("Title", "Genre", "Author");
         book.daysBorrowed = 7;
         assertEquals(0, book.checkLateFee());
     }
-    // Testing if the book is late
+
     @Test
     public void testCheckLateFee_Late() {
         Book book = new Book("Title", "Genre", "Author");
