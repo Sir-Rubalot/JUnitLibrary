@@ -5,14 +5,6 @@ public class Book {
     public String author;
     public boolean borrowed;
     public int daysBorrowed;
-    public int noBorrowedBooks;
-    public String name;
-    public String genre;
-    public String author;
-    public boolean borrowed;
-    public int daysBorrowed;
-
-    // Test comment
 
     public Book(String name, String genre, String author) {
         this.name = name;
