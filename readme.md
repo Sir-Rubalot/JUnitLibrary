@@ -12,4 +12,4 @@ For every day the book is late, the user has to pay a fine of 20 kr.
 The user can use the extend function to reset the book back to 0 days borrowed, this counts as borrowing 1 book.
 
 LEFT TO RESOLVE:
-After extending a late book, the late fee disappears when you return it. Either: Charge late fee on extentsion, OR wait to charge until returned.
+After extending a late book, the late fee disappears when you return it. Either: Charge late fee on extension, OR wait to charge until returned.
