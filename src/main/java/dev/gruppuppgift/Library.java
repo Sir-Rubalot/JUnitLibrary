@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Library {
-    private ArrayList<Book> booksInStockList;
-    private ArrayList<Book> borrowedBooksList;
+    public ArrayList<Book> booksInStockList;
+    public ArrayList<Book> borrowedBooksList;
     private Scanner scanner;
 
     public static final boolean AUTHOR = true;
@@ -129,15 +129,25 @@ public class Library {
     }
 
     public void stockLibrary() {
-            Book book1 = new Book("Harry Potter", "Fantasy", "J.K Rowling");
-            booksInStockList.add(book1);
-            Book book2 = new Book("Hitchhiker's guide to the galaxy", "Sci-Fi", "Douglas Adams");
-            booksInStockList.add(book2);
-            Book book3 = new Book("It ends with us", "Romance", "Colleen Hoover");
-            booksInStockList.add(book3);
-            Book book4 = new Book("Ondskan", "Fictional Autobiography", "Jan Guillou");
-            booksInStockList.add(book4);
-            Book book5 = new Book("Tempelriddaren", "Historical Fiction", "Jan Guillou");
-            booksInStockList.add(book5);
+        for (int i = 0; i < 1; i++) {
+            Book book = new Book("Harry Potter", "Fantasy", "J.K Rowling");
+            booksInStockList.add(book);
+        }
+        for (int i = 0; i < 1; i++) {
+            Book book = new Book("Hitchhiker's guide to the galaxy", "Sci-Fi", "Douglas Adams");
+            booksInStockList.add(book);
+        }
+        for (int i = 0; i < 1; i++) {
+            Book book = new Book("It ends with us", "Romance", "Colleen Hoover");
+            booksInStockList.add(book);
+        }
+        for (int i = 0; i < 1; i++) {
+            Book book = new Book("Ondskan", "Fictional Autobiography", "Jan Guillou");
+            booksInStockList.add(book);
+        }
+        for (int i = 0; i < 1; i++) {
+            Book book = new Book("Tempelriddaren", "Historical Fiction", "Jan Guillou");
+            booksInStockList.add(book);
+        }
     }
 }
