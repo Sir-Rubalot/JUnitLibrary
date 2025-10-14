@@ -17,6 +17,7 @@ public class Program {
                     "Press A to list all currently borrowed books by an author \n" +
                     "Press G to list all currently borrowed books by genre \n" +
                     "Press E to extend borrowing \n" +
+                    "Press D to advance a day \n" +
                     "Press Q to exit");
             System.out.print("> ");
             String input = scanner.nextLine();
@@ -41,7 +42,9 @@ public class Program {
                     extendTime();
                     break;
                 case "D":
-                    advanceDay();
+                    library.advanceDay();
+                    System.out.println("Day advanced by 1.");
+                    break;
                 case "Q":
                     System.out.println("Exit program.");
                     System.exit(0);
@@ -50,7 +53,7 @@ public class Program {
                     break;
             }
 
-            library.advanceDay();
+            //library.advanceDay();
         }
     }
 
