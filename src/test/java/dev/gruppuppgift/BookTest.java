@@ -1,5 +1,7 @@
 package dev.gruppuppgift;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class BookTest {
@@ -12,10 +14,19 @@ public class BookTest {
     public void testBorrowBook() {
 
     }
-
+    // Testing if the book is not late
     @Test
-    public void testCheckLateFee() {
-
+    public void testCheckLateFee_NotLate() {
+        Book book = new Book("Title", "Genre", "Author");
+        book.daysBorrowed = 7;
+        assertEquals(0, book.checkLateFee());
+    }
+    // Testing if the book is late
+    @Test
+    public void testCheckLateFee_Late() {
+        Book book = new Book("Title", "Genre", "Author");
+        book.daysBorrowed = 10;
+        assertEquals(40, book.checkLateFee());
     }
 
     @Test
