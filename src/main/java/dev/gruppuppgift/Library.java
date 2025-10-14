@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Library {
-    private ArrayList<Book> booksInStockList;
-    private ArrayList<Book> borrowedBooksList;
-    private Scanner scanner;
+    public ArrayList<Book> booksInStockList;
+    public ArrayList<Book> borrowedBooksList;
+    public Scanner scanner;
 
     public static final boolean AUTHOR = true;
     public static final boolean GENRE = false;

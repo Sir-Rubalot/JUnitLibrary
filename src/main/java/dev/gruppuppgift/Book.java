@@ -1,13 +1,11 @@
 package dev.gruppuppgift;
 public class Book {
-    private String name;
-    private String genre;
-    private String author;
-    private boolean borrowed;
-    private int daysBorrowed;
-    private int noBorrowedBooks;
-
-    // Test comment
+    public String name;
+    public String genre;
+    public String author;
+    public boolean borrowed;
+    public int daysBorrowed;
+    public int noBorrowedBooks;
 
     public Book(String name, String genre, String author) {
         this.name = name;
