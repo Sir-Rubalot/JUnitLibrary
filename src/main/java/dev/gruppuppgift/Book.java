@@ -5,6 +5,7 @@ public class Book {
     private String author;
     private boolean borrowed;
     private int daysBorrowed;
+    private int noBorrowedBooks;
 
     public Book(String name, String genre, String author) {
         this.name = name;
@@ -22,6 +23,10 @@ public class Book {
         }
         return 0;
     }
+    public void noBorrowedBooks() {
+        this.noBorrowedBooks = 0;
+    }
+
 
     public void extendTime() {
         this.daysBorrowed = 0;

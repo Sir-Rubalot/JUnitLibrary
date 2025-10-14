@@ -128,25 +128,15 @@ public class Library {
     }
 
     public void stockLibrary() {
-        // for (int i = 0; i < 5; i++) {
             Book book1 = new Book("Harry Potter", "Fantasy", "J.K Rowling");
             booksInStockList.add(book1);
-        // }
-        // for (int i = 0; i < 10; i++) {
             Book book2 = new Book("Hitchhiker's guide to the galaxy", "Sci-Fi", "Douglas Adams");
             booksInStockList.add(book2);
-        // }
-        // for (int i = 0; i < 3; i++) {
             Book book3 = new Book("It ends with us", "Romance", "Colleen Hoover");
             booksInStockList.add(book3);
-        // }
-        // for (int i = 0; i < 4; i++) {
             Book book4 = new Book("Ondskan", "Fictional Autobiography", "Jan Guillou");
             booksInStockList.add(book4);
-        // }
-        // for (int i = 0; i < 5; i++) {
             Book book5 = new Book("Tempelriddaren", "Historical Fiction", "Jan Guillou");
             booksInStockList.add(book5);
-        // }
     }
 }
