@@ -1,11 +1,10 @@
 package dev.gruppuppgift;
 public class Book {
-    private String name;
-    private String genre;
-    private String author;
-    private boolean borrowed;
-    private int daysBorrowed;
-    private int noBorrowedBooks;
+    public String name;
+    public String genre;
+    public String author;
+    public boolean borrowed;
+    public int daysBorrowed;
 
     // Test comment
 
@@ -25,10 +24,6 @@ public class Book {
         }
         return 0;
     }
-    public void noBorrowedBooks() {
-        this.noBorrowedBooks = 0;
-    }
-
 
     public void extendTime() {
         this.daysBorrowed = 0;
