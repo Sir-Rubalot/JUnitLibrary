@@ -10,7 +10,8 @@ public class LibraryTest {
 
     @Test
     public void testBorrowBook() {
-
+        // Suggestion: Test to see if the book's been borrowed already
+        // Suggestion: Test to see if the book's in stock
     }
 
     @Test

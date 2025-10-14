@@ -27,9 +27,7 @@ public class Library {
                 this.borrowedBooksList.add(book);
             }
             
-            
-            
-            /* 
+            /* OLD LOOP
             if (borrowedBooksList.contains(book)) {
                 System.out.println("You've already borrowed this book.");
                 this.borrowedBooksList.remove(book);
