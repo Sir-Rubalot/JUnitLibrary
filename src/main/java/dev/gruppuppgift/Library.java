@@ -122,12 +122,19 @@ public class Library {
             }
         }
     }
-
     public void advanceDay() {
-        for (int i = 0; i < booksInStockList.size(); i++) {
-            booksInStockList.get(i).advanceDay();
-        }
+    for (Book b : borrowedBooksList) {
+        b.advanceDay();  // each borrowed book increments its own counter
     }
+    // If you're enforcing “1 borrow/extend per day,” also reset that here:
+    // borrowActionsToday = 0;
+
+
+    //public void advanceDay() {
+    //    for (int i = 0; i < booksInStockList.size(); i++) {
+    //        booksInStockList.get(i).advanceDay();
+        }
+    
 
     public ArrayList<Book> listAvailableBooks() {
         for (int i = 0; i < booksInStockList.size(); i++) {
