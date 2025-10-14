@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Library {
-    public ArrayList<Book> booksInStockList;
-    public ArrayList<Book> borrowedBooksList;
-    public Scanner scanner;
+    private ArrayList<Book> booksInStockList;
+    private ArrayList<Book> borrowedBooksList;
+    private Scanner scanner;
 
     public static final boolean AUTHOR = true;
     public static final boolean GENRE = false;
@@ -23,6 +23,7 @@ public class Library {
             Book book = booksInStockList.get(i);
             if (borrowedBooksList.contains(book)) {
                 System.out.println("You've already borrowed this book.");
+                this.borrowedBooksList.remove(book);
                 return borrowedBooksList;
             } else if (book.getName().equalsIgnoreCase(title)) {
                 this.borrowedBooksList.add(book);
