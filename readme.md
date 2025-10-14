@@ -1,6 +1,6 @@
 # JUnitLibrary
 Groupassignment for testing an existing program from our teacher. 
-we're making adjustments to the code to adhere to the descriptions.
+we're making adjustments to the code to adhere to the descriptions. 
 
 INSTRUCTIONS:
 This is an application for a library where you can:

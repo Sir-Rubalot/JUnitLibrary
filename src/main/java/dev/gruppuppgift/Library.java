@@ -33,6 +33,8 @@ public class Library {
                 System.out.println("You've already borrowed this book.");
                 this.borrowedBooksList.remove(book);
                 return borrowedBooksList;
+            if (book.getName().equalsIgnoreCase(title) && borrowedBooksList.contains(book)) {
+                System.out.println("You've already borrowed this book!");
             } else if (book.getName().equalsIgnoreCase(title)) {
                 this.borrowedBooksList.add(book);
             }*/
