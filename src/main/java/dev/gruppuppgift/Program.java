@@ -8,7 +8,6 @@ public class Program {
 
     public void run() {
         library = new Library();
-        library.advanceDay();
 
         while (true) {
             System.out.println("Welcome to the library! \n" +
@@ -54,7 +53,6 @@ public class Program {
                 default:
                     break;
             }
-
 
             //library.advanceDay();
         }
