@@ -21,8 +21,17 @@ public class ProgramTest {
     }
 
     @Test
-    public void borrowBook() {
-        
+    public void testBorrowBook() {
+        Library library = new Library();
+        String title = "Harry Potter";
+        library.borrowBook(title);
+        boolean found = false;
+        for (Book b : library.borrowedBooksList) {
+            if (b.getName().equalsIgnoreCase(title)) {
+                found = true;
+                break;
+            }
+        }
     }
     
     @Test 
