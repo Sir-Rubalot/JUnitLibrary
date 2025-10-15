@@ -18,7 +18,11 @@ public class Program {
                     "Press A to list all currently borrowed books by an author \n" +
                     "Press G to list all currently borrowed books by genre \n" +
                     "Press E to extend borrowing \n" +
+<<<<<<< HEAD
                     "Press D to advance day \n" + 
+=======
+                    "Press D to advance a day \n" +
+>>>>>>> 5cde38b358f0f1b61e8f2e2945ee25a910b48f5d
                     "Press Q to exit");
             System.out.print("> ");
             String input = scanner.nextLine();
@@ -44,7 +48,11 @@ public class Program {
                     break;
                 case "D":
                     library.advanceDay();
+<<<<<<< HEAD
                     library.listBorrowedBooks(true);
+=======
+                    System.out.println("Day advanced by 1.");
+>>>>>>> 5cde38b358f0f1b61e8f2e2945ee25a910b48f5d
                     break;
                 case "Q":
                     System.out.println("Exit program.");
@@ -54,7 +62,11 @@ public class Program {
                     break;
             }
 
+<<<<<<< HEAD
             
+=======
+            //library.advanceDay();
+>>>>>>> 5cde38b358f0f1b61e8f2e2945ee25a910b48f5d
         }
     }
 
