@@ -35,14 +35,25 @@ public class LibraryTest {
         System.setOut(new PrintStream(outputStream));
         library.listAvailableBooks();
         String output = outputStream.toString();
-        assertTrue("Output should contain 'Harry Potter'", output.contains("Harry Potter"));
-        assertTrue("Output should contain 'ondskan'", output.contains("Ondskan"));
+        assertTrue("Output should contain 'Harry Potter'", output.contains("Harry Potter")); // Just for example
+        assertTrue("Output should contain 'ondskan'", output.contains("Ondskan")); // Just for example
         System.setOut(System.out);
+        assertTrue(library.listAvailableBooks().size() > 0);
     }
 
     @Test
     public void testListBorrowedBooks() {
-
+        Library library = new Library();
+        library.borrowBook("Harry Potter");
+        library.borrowBook("It ends with us");
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        library.listBorrowedBooks(true);
+        String output = outputStream.toString();
+        assertTrue("Output should contain 'Harry Potter", output.contains("Harry Potter"));
+        assertTrue("Output should contain 'It ends with us", output.contains("It ends with us"));
+        assertEquals("The list should contain 2 borrowed books", 2, library.borrowedBooksList.size());
+        System.setOut(System.out);
     }
 
     @Test
