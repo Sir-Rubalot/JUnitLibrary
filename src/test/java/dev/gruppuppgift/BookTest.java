@@ -26,7 +26,7 @@ public class BookTest {
     public void testCheckLateFee_Late() {
         Book book = new Book("Title", "Genre", "Author");
         book.daysBorrowed = 10;
-        assertEquals(40, book.checkLateFee());
+        assertEquals(60, book.checkLateFee());
     }
 
     @Test

@@ -25,6 +25,7 @@ public class Library {
                 System.out.println("You've already borrowed this book!");
             } else if (book.getName().equalsIgnoreCase(title)) {
                 this.borrowedBooksList.add(book);
+                // book.daysBorrowed = 0;
             }
             
             /* OLD LOOP
@@ -122,18 +123,30 @@ public class Library {
             }
         }
     }
+
     public void advanceDay() {
-    for (Book b : borrowedBooksList) {
-        b.advanceDay();  // each borrowed book increments its own counter
-    }
+
+        for (Book b : borrowedBooksList) {
+            b.advanceDay();  // each borrowed book increments its own counter
+        }
+        
     // If you're enforcing “1 borrow/extend per day,” also reset that here:
     // borrowActionsToday = 0;
+    }
 
+    // ALT CODE
+    /*
+        for (int i = 0; i < borrowedBooksList.size(); i++) {
+            Book book = borrowedBooksList.get(i);
+            book.daysBorrowed++;
+            System.out.println(book.getDaysBorrowed());
+        } */
 
+    // OLD CODE
     //public void advanceDay() {
     //    for (int i = 0; i < booksInStockList.size(); i++) {
     //        booksInStockList.get(i).advanceDay();
-        }
+    
     
 
     public ArrayList<Book> listAvailableBooks() {
