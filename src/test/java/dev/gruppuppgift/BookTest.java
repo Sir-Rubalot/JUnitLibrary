@@ -1,7 +1,7 @@
 package dev.gruppuppgift;
 
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class BookTest {
@@ -15,7 +15,20 @@ public class BookTest {
 
     @Test
     public void testBorrowBook() {
-
+        Library library = new Library();
+        library.borrowBook("Harry Potter");
+        boolean found = false;
+        for (Book b : library.borrowedBooksList) {
+            if (b.getName().equalsIgnoreCase("Harry Potter")) {
+                found = true;
+                break;
+            }
+        }
+        assertTrue("Book should be in borrowList", found);
+        int sizeBefore = library.borrowedBooksList.size();
+        library.borrowBook("Harry Potter");
+        int sizeAfter = library.borrowedBooksList.size();
+        assertEquals("Wont lend same book twice", sizeBefore, sizeAfter);
     }
 
     @Test
