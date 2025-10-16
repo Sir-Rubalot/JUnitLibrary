@@ -1,6 +1,7 @@
 package dev.gruppuppgift;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
@@ -62,12 +63,50 @@ public class LibraryTest {
     }
 
     @Test
-    public void testReturnBook() {
-
+    public void testReturnBookRemovesBookFromBorrowedList() {
+    Library library = new Library();
+    library.borrowBook("Harry Potter");
+    Book borrowedBook = null;
+    for (Book b : library.borrowedBooksList) {
+        if (b.getName().equalsIgnoreCase("Harry Potter")) {
+            borrowedBook = b;
+            break;
+        }
     }
-
+    assertNotNull(borrowedBook);
+    borrowedBook.setDaysBorrowed(10);
+    int lateFee = library.returnBook("Harry Potter");
+    assertEquals(60, lateFee);
+    boolean isLeft = false;
+    for (Book b : library.borrowedBooksList) {
+        if (b.getName().equalsIgnoreCase("Harry Potter")) {
+            isLeft = true;
+            break;
+            }
+        }
+    }
+            
     @Test
     public void stockLibrary() {
-        
+        Library library = new Library();
+        library.booksInStockList.clear();
+        library.stockLibrary();
+        int antalHarryPotter = 0;
+        int antalHitchhikersGuideToTheGalaxy = 0;
+        int antalItEndsWithUs = 0;
+        int antalOndskan = 0;
+        int antalTempelriddaren = 0;
+        for (Book b : library.booksInStockList) {
+            if(b.getName().equalsIgnoreCase("Harry Potter")) antalHarryPotter++;
+            if(b.getName().equalsIgnoreCase("Hitchhiker's Guide To The Galaxy")) antalHitchhikersGuideToTheGalaxy++;
+            if(b.getName().equalsIgnoreCase("It ends with us")) antalItEndsWithUs++;
+            if(b.getName().equalsIgnoreCase("Ondskan")) antalOndskan++;
+            if(b.getName().equalsIgnoreCase("Tempelriddaren")) antalTempelriddaren++;
+        }
+        assertEquals(5, antalHarryPotter);
+        assertEquals(10, antalHitchhikersGuideToTheGalaxy);
+        assertEquals(3, antalItEndsWithUs);
+        assertEquals(4, antalOndskan);
+        assertEquals(5, antalTempelriddaren);
     }
 }
