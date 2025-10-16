@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
@@ -20,6 +21,7 @@ public class LibraryTest {
         assertEquals(2, book.getDaysBorrowed());
     }
     
+
     @Test
     public void testExtendTime() {
         Book book = new Book("testTitle", "testTenre", "testAuthor");
@@ -28,6 +30,7 @@ public class LibraryTest {
         book.extendTime();
         assertEquals(0, book.getDaysBorrowed());
     }
+
 
     @Test
     public void testListAvailableBooks() {
@@ -41,6 +44,7 @@ public class LibraryTest {
         System.setOut(System.out);
         assertTrue(library.listAvailableBooks().size() > 0);
     }
+
 
     @Test
     public void testListBorrowedBooks() {
@@ -57,10 +61,23 @@ public class LibraryTest {
         System.setOut(System.out);
     }
 
+
     @Test
     public void testListBorrowedBooksBy() {
-
+        Library library = new Library();
+        library.borrowBook("Harry Potter");
+        String input = "J.K Rowling\n";
+        ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        library.listBorrowedBooksBy(Library.AUTHOR);
+        String output = outputStream.toString();
+        assertTrue("Output should contain Harry Potter", output.contains("Harry Potter"));
+        System.setIn(System.in);
+        System.setOut(System.out);
     }
+    
 
     @Test
     public void testReturnBookRemovesBookFromBorrowedList() {
@@ -86,6 +103,7 @@ public class LibraryTest {
         }
     }
             
+
     @Test
     public void stockLibrary() {
         Library library = new Library();
