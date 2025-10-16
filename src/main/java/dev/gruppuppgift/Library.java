@@ -21,11 +21,22 @@ public class Library {
 
         for (int i = 0; i < booksInStockList.size(); i++) {
             Book book = booksInStockList.get(i);
-            if (book.getName().equalsIgnoreCase(title) && borrowedBooksList.contains(book)) {
-                System.out.println("You've already borrowed this book!");
-            } else if (book.getName().equalsIgnoreCase(title)) {
-                this.borrowedBooksList.add(book);
-                // book.daysBorrowed = 0;
+            boolean alreadyBorrowed = false;
+            for (Book b : borrowedBooksList) {
+                if (b.getName().equalsIgnoreCase(book.getName())) {
+                    alreadyBorrowed = true;
+                    break;
+                }
+            }
+            if (book.getName().equalsIgnoreCase(title) && ! alreadyBorrowed) {
+                Book loancopy = new Book(book.getName(), book.getGenre(), book.getAuthor());
+                loancopy.daysBorrowed = 0;
+                loancopy.borrowBook();
+                this.borrowedBooksList.add(loancopy);
+                break;
+            } else if (book.getName().equalsIgnoreCase(title) && alreadyBorrowed) {
+                System.out.println("you've already borrowed this book!");
+                break;
             }
             
             /* OLD LOOP
