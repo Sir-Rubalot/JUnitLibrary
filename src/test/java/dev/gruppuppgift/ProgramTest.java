@@ -10,8 +10,12 @@ public class ProgramTest {
     }
 
     @Test
-    public void extendTime() {
-        
+    public void testExtendTimeResetsDaysBorrowed() {
+        Book book = new Book("testtitle", "testgenre", "testauthor");
+        book.setDaysBorrowed(7);
+        assertEquals(7, book.getDaysBorrowed());
+        book.extendTime();
+        assertEquals(0, book.getDaysBorrowed());
     }
 
     @Test

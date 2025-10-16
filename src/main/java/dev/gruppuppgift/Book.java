@@ -58,4 +58,8 @@ public class Book {
     public int getDaysBorrowed() {
         return daysBorrowed;
     }
+
+    public void setDaysBorrowed(int days) {
+        this.daysBorrowed = days;
+    }
 }
