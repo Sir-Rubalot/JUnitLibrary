@@ -7,7 +7,10 @@ import org.junit.Test;
 public class BookTest {
     @Test
     public void testAdvanceDay() {
-
+        Book book = new Book("title", "genre", "author");
+        assertEquals(0, book.getDaysBorrowed());
+        book.advanceDay();
+        assertEquals(1, book.getDaysBorrowed());
     }
 
     @Test
