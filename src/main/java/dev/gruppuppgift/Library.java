@@ -32,6 +32,7 @@ public class Library {
                 Book loancopy = new Book(book.getName(), book.getGenre(), book.getAuthor());
                 loancopy.daysBorrowed = 0;
                 loancopy.borrowBook();
+                booksInStockList.remove(i);
                 this.borrowedBooksList.add(loancopy);
                 break;
             } else if (book.getName().equalsIgnoreCase(title) && alreadyBorrowed) {
