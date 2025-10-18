@@ -5,6 +5,7 @@ public class Book {
     public String author;
     public boolean borrowed;
     public int daysBorrowed;
+    public boolean borrowBookToday;
 
     public Book(String name, String genre, String author) {
         this.name = name;
@@ -29,6 +30,8 @@ public class Book {
 
     public void advanceDay() {
         this.daysBorrowed++;
+        this.borrowBookToday = false;
+        System.out.println("One day has passed. borrowBookToday is " + borrowBookToday);
     }
 
     public void borrowBook() {
