@@ -19,28 +19,27 @@ public class Library {
     }
 
     public ArrayList<Book> borrowBook(String title) {
-
+        if (borrowBookToday) {
+            System.out.println("You may only borrow one book per day");
+            return borrowedBooksList;
+        }
         for (int i = 0; i < booksInStockList.size(); i++) {
             Book book = booksInStockList.get(i);
             boolean alreadyBorrowed = false;
-            if (borrowBookToday) {
-                System.out.println("You may only borrow one book a day");
-                return borrowedBooksList;
-            }
+            
             for (Book b : borrowedBooksList) {
                 if (b.getName().equalsIgnoreCase(book.getName())) {
                     alreadyBorrowed = true;
                     break;
                 }
-                borrowBookToday = true;
-                return borrowedBooksList;
             }
-            if (book.getName().equalsIgnoreCase(title) && ! alreadyBorrowed) {
+            if (book.getName().equalsIgnoreCase(title) && !alreadyBorrowed) {
                 Book loancopy = new Book(book.getName(), book.getGenre(), book.getAuthor());
                 loancopy.daysBorrowed = 0;
                 loancopy.borrowBook();
                 booksInStockList.remove(i);
                 this.borrowedBooksList.add(loancopy);
+                borrowBookToday = true;
                 break;
             } else if (book.getName().equalsIgnoreCase(title) && alreadyBorrowed) {
                 System.out.println("you've already borrowed this book!");

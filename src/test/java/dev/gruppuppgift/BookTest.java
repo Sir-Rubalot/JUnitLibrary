@@ -1,6 +1,5 @@
 package dev.gruppuppgift;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -47,36 +46,64 @@ public class BookTest {
 
     @Test
     public void testExtendTime() {
-
+        Book book = new Book("testTitle", "testTenre", "testAuthor");
+        book.setDaysBorrowed(7);
+        assertEquals(7, book.getDaysBorrowed());
+        book.extendTime();
+        assertEquals(0, book.getDaysBorrowed());
     }
 
     @Test
     public void testGetAuthor() {
-
+        Book book = new Book("title", "genre", "author");
+        assertEquals("author", book.getAuthor());
     }
 
     @Test
     public void testGetDaysBorrowed() {
-
+        Book book = new Book("title", "genre", "author");
+        book.setDaysBorrowed(5);
+        assertEquals(5, book.getDaysBorrowed());
     }
 
     @Test
     public void testGetGenre() {
-
-    }
-
-    @Test
-    public void testGetName() {
-
+        Book book = new Book("title", "genre", "author");
+        assertEquals("genre", book.getGenre());
     }
 
     @Test
     public void testIsBorrowed() {
-
+        Book book = new Book("title", "genre", "author");
+        assertFalse("Book shouldn't be borrowed to start", book.isBorrowed());
+        book.borrowBook();
+        assertTrue("Book should be borrowed", book.isBorrowed());
+        book.returnBook();
+        assertFalse("Book shoudlnt be borrowed after returnBook()", book.isBorrowed());
     }
 
     @Test
-    public void testReturnBook() {
-
+    public void testReturnBookAndRemovesFeeCount() {
+        Library library = new Library();
+        library.borrowBook("Harry Potter");
+        Book borrowedBook = null;
+        for (Book b : library.borrowedBooksList) {
+            if (b.getName().equalsIgnoreCase("Harry Potter")) {
+                borrowedBook = b;
+                break;
+            }
+        }
+        assertNotNull("Book should be borrowed", borrowedBook);
+        borrowedBook.setDaysBorrowed(10);
+        int lateFee = library.returnBook("Harry Potter");
+        assertEquals("Late fee should be 60kr (3 days late)", 60, lateFee);
+        boolean isLeft = false;
+        for (Book b : library.borrowedBooksList) {
+            if (b.getName().equalsIgnoreCase("Harry Potter")) {
+                isLeft = true;
+                break;
+            }
+        }
+        assertFalse("Book should be removed from borrowedBooksList", isLeft);
     }
 }
