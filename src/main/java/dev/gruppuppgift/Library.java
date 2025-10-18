@@ -6,6 +6,7 @@ public class Library {
     public ArrayList<Book> booksInStockList;
     public ArrayList<Book> borrowedBooksList;
     private Scanner scanner;
+    private boolean borrowBookToday = false;
 
     public static final boolean AUTHOR = true;
     public static final boolean GENRE = false;
@@ -22,11 +23,17 @@ public class Library {
         for (int i = 0; i < booksInStockList.size(); i++) {
             Book book = booksInStockList.get(i);
             boolean alreadyBorrowed = false;
+            if (borrowBookToday) {
+                System.out.println("You may only borrow one book a day");
+                return borrowedBooksList;
+            }
             for (Book b : borrowedBooksList) {
                 if (b.getName().equalsIgnoreCase(book.getName())) {
                     alreadyBorrowed = true;
                     break;
                 }
+                borrowBookToday = true;
+                return borrowedBooksList;
             }
             if (book.getName().equalsIgnoreCase(title) && ! alreadyBorrowed) {
                 Book loancopy = new Book(book.getName(), book.getGenre(), book.getAuthor());
