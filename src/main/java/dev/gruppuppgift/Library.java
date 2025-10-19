@@ -51,19 +51,6 @@ public class Library {
                 System.out.println("you've already borrowed this book!");
                 break;
             }
-
-
-            
-            /* OLD LOOP
-            if (borrowedBooksList.contains(book)) {
-                System.out.println("You've already borrowed this book.");
-                this.borrowedBooksList.remove(book);
-                return borrowedBooksList;
-            if (book.getName().equalsIgnoreCase(title) && borrowedBooksList.contains(book)) {
-                System.out.println("You've already borrowed this book!");
-            } else if (book.getName().equalsIgnoreCase(title)) {
-                this.borrowedBooksList.add(book);
-            }*/
         }
         System.out.println();
 
@@ -124,15 +111,6 @@ public class Library {
             }
             System.out.print("> ");
             return;
-
-            /* String input = scanner.nextLine();
-            for (int i = 0; i < borrowedBooksList.size(); i++) {
-                Book book = borrowedBooksList.get(i);
-                if (book.getAuthor() == input) {
-                    System.out.println("Title: " + book.getName());
-                }
-            }*/
-
         } else {
             System.out.println("Genres: ");
             for (int i = 0; i < borrowedBooksList.size(); i++) {

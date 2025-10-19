@@ -56,7 +56,7 @@ public class LibraryTest {
         System.setOut(new PrintStream(outputStream));
         library.listBorrowedBooksBy(library.AUTHOR);
         String output = outputStream.toString();
-        assertTrue("Output should contain Harry Potter", output.contains("Harry Potter"));
+        assertTrue("Output should contain J.K Rowling", output.contains("J.K Rowling"));
         System.setIn(System.in);
         System.setOut(System.out);
     }
