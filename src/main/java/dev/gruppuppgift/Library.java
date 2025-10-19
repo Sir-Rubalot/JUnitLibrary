@@ -53,14 +53,11 @@ public class Library {
             }
         }
         System.out.println();
-
         return borrowedBooksList;
     }
 
     public int returnBook(String title) {
-
         int totalLateFee = 0;
-
         for (int i = 0; i < borrowedBooksList.size(); i++) {
             Book book = borrowedBooksList.get(i);
             if (book.getName().equalsIgnoreCase(title)) {
@@ -71,7 +68,6 @@ public class Library {
         }
         System.out.println("You owe us " + totalLateFee + " kr in late fees.");
         System.out.println();
-
         return totalLateFee;
     }
 
@@ -98,7 +94,6 @@ public class Library {
                 return book.getDaysBorrowed();
             }
         }
-
         return Integer.MIN_VALUE;
     }
 
