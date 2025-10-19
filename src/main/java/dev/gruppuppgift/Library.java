@@ -123,14 +123,15 @@ public class Library {
                 System.out.println(book.getAuthor());
             }
             System.out.print("> ");
+            return;
 
-            String input = scanner.nextLine();
+            /* String input = scanner.nextLine();
             for (int i = 0; i < borrowedBooksList.size(); i++) {
                 Book book = borrowedBooksList.get(i);
                 if (book.getAuthor() == input) {
                     System.out.println("Title: " + book.getName());
                 }
-            }
+            }*/
 
         } else {
             System.out.println("Genres: ");
