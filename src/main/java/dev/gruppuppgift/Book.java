@@ -31,7 +31,7 @@ public class Book {
     public void advanceDay() {
         this.daysBorrowed++;
         this.borrowBookToday = false;
-        System.out.println("One day has passed. borrowBookToday is " + borrowBookToday);
+        System.out.println("One day has passed.");
     }
 
     public void borrowBook() {

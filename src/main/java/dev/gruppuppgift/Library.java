@@ -8,7 +8,7 @@ public class Library {
     private Scanner scanner;
     private boolean borrowBookToday = false;
 
-    public static final boolean AUTHOR = true;
+    public boolean AUTHOR = true;
     public static final boolean GENRE = false;
 
     public Library() {
@@ -115,8 +115,8 @@ public class Library {
         return Integer.MIN_VALUE;
     }
 
-    public void listBorrowedBooksBy(boolean author) {
-        if (author) {
+    public void listBorrowedBooksBy(boolean AUTHOR) {
+        if (AUTHOR) {
             System.out.println("Authors: ");
             for (int i = 0; i < borrowedBooksList.size(); i++) {
                 Book book = borrowedBooksList.get(i);
@@ -156,21 +156,6 @@ public class Library {
         }
         borrowBookToday = false;
     }
-
-    // ALT CODE
-    /*
-        for (int i = 0; i < borrowedBooksList.size(); i++) {
-            Book book = borrowedBooksList.get(i);
-            book.daysBorrowed++;
-            System.out.println(book.getDaysBorrowed());
-        } */
-
-    // OLD CODE
-    //public void advanceDay() {
-    //    for (int i = 0; i < booksInStockList.size(); i++) {
-    //        booksInStockList.get(i).advanceDay();
-    
-    
 
     public ArrayList<Book> listAvailableBooks() {
         for (int i = 0; i < booksInStockList.size(); i++) {

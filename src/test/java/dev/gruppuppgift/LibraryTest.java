@@ -54,7 +54,7 @@ public class LibraryTest {
         System.setIn(inContent);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
-        library.listBorrowedBooksBy(Library.AUTHOR);
+        library.listBorrowedBooksBy(library.AUTHOR);
         String output = outputStream.toString();
         assertTrue("Output should contain Harry Potter", output.contains("Harry Potter"));
         System.setIn(System.in);

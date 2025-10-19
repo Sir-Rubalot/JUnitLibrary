@@ -33,7 +33,7 @@ public class Program {
                     library.listBorrowedBooks(true);
                     break;
                 case "A":
-                    library.listBorrowedBooksBy(Library.AUTHOR);
+                    library.listBorrowedBooksBy(library.AUTHOR);
                     break;
                 case "G":
                     library.listBorrowedBooksBy(Library.GENRE);
