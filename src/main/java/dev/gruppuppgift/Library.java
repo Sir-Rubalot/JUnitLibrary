@@ -45,6 +45,8 @@ public class Library {
                 System.out.println("you've already borrowed this book!");
                 break;
             }
+
+
             
             /* OLD LOOP
             if (borrowedBooksList.contains(book)) {
@@ -143,13 +145,10 @@ public class Library {
     }
 
     public void advanceDay() {
-
         for (Book b : borrowedBooksList) {
-            b.advanceDay();  // each borrowed book increments its own counter
+            b.advanceDay();
         }
-        
-    // If you're enforcing “1 borrow/extend per day,” also reset that here:
-    // borrowActionsToday = 0;
+        borrowBookToday = false;
     }
 
     // ALT CODE

@@ -44,7 +44,6 @@ public class Program {
                 case "D":
                     library.advanceDay();
                     library.listBorrowedBooks(true);
-                //  System.out.println("Day advanced by 1.");
                     break;
                 case "Q":
                     System.out.println("Exit program.");
@@ -53,15 +52,8 @@ public class Program {
                 default:
                     break;
             }
-
-            //library.advanceDay();
         }
     }
-
-    /*
-    public void advanceDay() {
-        this.daysBorrowed++;
-    } */
 
     public void extendTime() {
         System.out.println("Which book do you want to extend?");
