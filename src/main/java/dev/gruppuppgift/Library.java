@@ -19,6 +19,12 @@ public class Library {
     }
 
     public ArrayList<Book> borrowBook(String title) {
+
+        if (borrowedBooksList.size() == 5) {
+            System.out.println("You've already borrowed 5 books. Return some and come back.");
+            return borrowedBooksList;
+        }
+
         if (borrowBookToday) {
             System.out.println("You may only borrow one book per day");
             return borrowedBooksList;
